@@ -9,9 +9,9 @@
 <title>Login page</title>
 </head>
 <body>
-<form action="validate" method="POST">
-User id:<input type="text" name="userId"></br>
-Password:<input type="password" name="Password"></br>
+<form action="validate" method="post">
+userid:<input type="text" name="userid"></br>
+password:<input type="password" name="password"></br>
 <input type="submit" value="login">
 </form>
 </body>

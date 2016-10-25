@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class OpenController {
@@ -11,14 +12,15 @@ public class OpenController {
 			@RequestMapping("/")
 	public String gotohome()
 	{
-		return "index";
+		System.out.print("executing");
+				return "index";
 	}
 			@RequestMapping("/validate")
-			public String validate(@RequestParam(name="User id")String userId,@RequestParam(name="Password")String pwd,Model model)
+			public String validate(@RequestParam("userid")String id,@RequestParam("password")String pwd,Model model)
 			{
-				if(userId.equals("niit")&&pwd.equals("niit"))
+				if(id.equals("niit") && pwd.equals("niit"))
 				{
-					model.addAttribute("success message","successfully loggedin");
+					model.addAttribute("SuccessMessage","successfully loggedin");
 					return "index";
 				}
 				else
@@ -32,18 +34,22 @@ public class OpenController {
 	@RequestMapping("/login")
 public String login(Model model)
 {
-	model.addAttribute("userclickedLogin","true");
+		model.addAttribute("userClickedLogin","true");
 		return "index";
 }
 @RequestMapping("/register")
 public String register(Model model)
 {
-	model.addAttribute("userclickedRegister","true");
+	model.addAttribute("userClickedRegister","true");
 		return "index";
 }
-		
-		
-		
+@RequestMapping("/Logout")
+public String logout()
+{
+			System.out.println("THANKS FOR VISITING OUR WEBSITE");
+		return "0";
+	
+}		
 			
 }
 
