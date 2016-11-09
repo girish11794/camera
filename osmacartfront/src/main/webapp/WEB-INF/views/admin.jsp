@@ -25,7 +25,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home">OSMA</a>
+      <a class="navbar-brand" href="#">OSMA</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="aboutus">ABOUT US</a></li>
@@ -38,19 +38,8 @@
                   </ul>     
       </li>
           </ul>
-           <ul class="nav navbar-nav pull-right">
-    <c:if test="${empty SuccessMessage}">
-            <li><a href="login">login<span class="glyphicon glyphicon-log-in"></span></a></li>
-      <li><a href="register">register<span class="glyphicon glyphicon-user"></span></a></li>
-      </c:if>
-      <c:if test="${not empty SuccessMessage}">
-       <li><a href="mycart">My Cart<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-       <li><a href="login">Logout<span class="glyphicon glyphicon-log-out"></span></a></li>
-       </c:if>
-          </ul>
-  </div>
-  </nav>
-   </body>
+          </div>
+          </nav>
+          <jsp:include page="footer.jsp"></jsp:include><br>
+</body>
 </html>
-
-

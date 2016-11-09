@@ -9,10 +9,22 @@
 <title>Login page</title>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include><br>
 <form action="validate" method="post">
-userid:<input type="text" name="userid"></br>
-password:<input type="password" name="password"></br>
+<table style="margin:40px;">
+<tr>
+<td><label for="userid">userid</label></td>
+<td>:</td>
+<td><input type="text" name="userid"></br>
+</tr>
+<tr>
+<td><label for="password">password</label></td>
+<td>:</td>
+<td><input type="password" name="password"></br>
+</tr>
+</table>
 <input type="submit" value="login">
 </form>
+<jsp:include page="footer.jsp"></jsp:include><br>
 </body>
 </html>

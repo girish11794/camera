@@ -28,7 +28,13 @@ public class ExactController {
 			model.addAttribute("SuccessMessage","you have successfully loggedin");
 			return "index";
 		}
+		else if(id.equals("123") && pwd.equals("456"))
+		{
+			model.addAttribute("SuccessAdmin","you have successfully loggedin as admin");
+			return "admin";
+		}
 		else
+			
 		{
 			model.addAttribute("ErrorMessage","Invalid Credentials");
 			return "index";
@@ -40,16 +46,56 @@ public class ExactController {
 	public String login(Model model)
 	{
 			model.addAttribute("userClickedLogin","true");
-			return "index";
+			return "login";
 	}
 	@RequestMapping("/register")
 	public String register(Model model)
 	{
 		model.addAttribute("userClickedRegister","true");
-			return "index";
+			return "register";
 	}
-				
-	}
-
-
 	
+	@RequestMapping("/supplier")
+	public String supplier()
+	{
+				return "supplier";
+	}
+
+	@RequestMapping("/category")
+	public String category()
+	{
+				return "category";
+	}
+
+	@RequestMapping("/product")
+	public String product()
+	{
+				return "product";
+	}
+	@RequestMapping("/home")
+	public String home(Model model)
+	{
+		model.addAttribute("osma","true");
+					return "home";
+	}
+
+		@RequestMapping("/aboutus")
+	public String about(Model model)
+	{
+		model.addAttribute("aboutus","true");
+					return "aboutus";
+	}
+	@RequestMapping("/contactus")
+	public String contatc(Model model)
+	{
+		model.addAttribute("contactus","true");
+					return "contactus";
+	}
+	
+	@RequestMapping("/mycart")
+	public String mycart(Model model)
+	{
+		model.addAttribute("mycart","true");
+					return "mycart";
+	}
+	}
