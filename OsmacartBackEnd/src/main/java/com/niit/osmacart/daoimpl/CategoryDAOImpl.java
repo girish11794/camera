@@ -1,15 +1,15 @@
-package com.niit.osmacartdao.impl;
+package com.niit.osmacart.daoimpl;
 
 import java.util.List;
 
 import org.hibernate.HibernateException;
-
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.osmacart.dao.CategoryDAO;
@@ -18,26 +18,28 @@ import com.niit.osmacart.model.Category;
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 		@Autowired
-	public SessionFactory sessionFactory;
-		
+ SessionFactory sessionFactory;
+			
 	@Autowired
 	public CategoryDAOImpl(SessionFactory sessionFactory )
 	{
 		this.sessionFactory=sessionFactory;
 	}
-	@Autowired
+
 	@Transactional
-	@Qualifier
-	public boolean create(Category category) {
+	
+	public boolean save(Category category) {
+		
 		
 		try{
-			((CategoryDAO) sessionFactory.getCurrentSession()).create(category);
+			sessionFactory.getCurrentSession().save(category);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
-		}
+		
+	}
 	}
 	@Transactional
 	public boolean update(Category category) {
@@ -73,6 +75,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 	}
 				@Transactional
+				
 	public List<Category> list() {
 	
 		String hql = "from Category";
@@ -80,6 +83,6 @@ public class CategoryDAOImpl implements CategoryDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		return query.list();
-		
-	}
+				}
+				
 }

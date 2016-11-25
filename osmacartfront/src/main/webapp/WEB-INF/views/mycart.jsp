@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!DOCTYPE html>
-<html>
-<body>
+
 <jsp:include page="header.jsp"></jsp:include>
 <table style="width:100%">
   <tr>

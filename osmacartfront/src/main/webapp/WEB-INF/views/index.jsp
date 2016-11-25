@@ -2,10 +2,14 @@
            uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
-<h1>SHOPPINGCART</h1>
+<h1>CARTSITE</h1>
 <hr>
-<c:if test="${empty successadmin}">
 <jsp:include page="header.jsp"></jsp:include><br>
+<c:if test="${not empty SuccessMessage}">
+                         <jsp:include page="ourproduct.jsp"></jsp:include>
+                       
+                                    </c:if>   
+<c:if test="${empty successadmin}">
 </c:if>
 <c:if test="${userClickedLogin}">
 <jsp:include page="login.jsp"></jsp:include><br>
@@ -29,7 +33,6 @@
 <c:out value="${SuccessMessage}"/>
 ${registermessage}
 <jsp:include page="home.jsp"></jsp:include><br>
-<jsp:include page="thumbnail.jsp"></jsp:include><br>
 <jsp:include page="footer.jsp"></jsp:include><br>
 </body>
 </html>

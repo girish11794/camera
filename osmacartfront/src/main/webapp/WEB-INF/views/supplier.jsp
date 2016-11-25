@@ -9,5 +9,6 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include><br>
 this is a supplier
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

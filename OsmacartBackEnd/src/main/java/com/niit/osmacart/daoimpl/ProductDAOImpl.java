@@ -1,4 +1,4 @@
-package com.niit.osmacart.dao.impl;
+package com.niit.osmacart.daoimpl;
 
 import java.util.List;
 

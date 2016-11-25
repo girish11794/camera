@@ -8,6 +8,25 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include><br>
-this is category
+<form action=" " method=" ">
+<table style="margin:40px;">
+<tr>
+<td><label for="Category ID">Category ID</label></td>
+<td>:</td>
+<td><input type="text" name="Category ID"></br>
+</tr>
+<tr>
+<td><label for="Category Name">Category Name</label></td>
+<td>:</td>
+<td><input type="text" name="Category Name"></br>
+</tr>
+<td><label for="Category Description">Category Description</label></td>
+<td>:</td>
+<td><input type="text" name="Category Description"></br>
+</tr>
+</table>
+<input type="submit" value="Save Category">
+</form>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

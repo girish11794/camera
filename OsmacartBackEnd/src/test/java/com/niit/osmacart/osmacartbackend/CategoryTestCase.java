@@ -1,7 +1,5 @@
 package com.niit.osmacart.osmacartbackend;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -10,10 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.osmacart.dao.CategoryDAO;
 import com.niit.osmacart.model.Category;
-
-public class CategoryTestCase {
-
-	@Autowired
+public class CategoryTestCase  {
+		@Autowired
 	static AnnotationConfigApplicationContext context;
 
 	@Autowired
@@ -23,50 +19,46 @@ public class CategoryTestCase {
 	static CategoryDAO categoryDAO;
 
 	@BeforeClass
-	public static void abcd()
+	@Autowired
+	public static void init()
 	{
+		
 		context=new  AnnotationConfigApplicationContext();
-		context.scan("com.niit.OsmacartBackEnd");
+		context.scan("com.niit");
 		context.refresh();
 		categoryDAO=(CategoryDAO) context.getBean("categoryDAO");
-		category=(Category) context.getBean("category");
-		System.out.println("The objects are created");
-	}
-	@Test
-	public void createCategoryTestCase()
+		 		 category=(Category) context.getBean("category");
+		 		
+			System.out.println("objects are created");
+			}
+		/*@Test
+			public void saveCategoryTestCase()
 	{
-		category.setId("mob007");
-		category.setDescription("this is mobile");
-		category.setName("mob cat");
+		category.setId("123");
+		category.setName("mo");
+		category.setDescription("boo");
 		Boolean status=categoryDAO.save(category);
-		Assert.assertEquals("create category test case",true,status);
-		}
-	@Test
-	public void deleteCategoryTestCase()
-	{
-		category.setId("mob007");
-		Boolean status=categoryDAO.delete(category);
-		Assert.assertEquals("delete category test case",true,status);
-		}
-	@Test
-	public void updateCategoryTestCase()
-	{
-		category.setId("mob007");
-		category.setId("mob007");
-		category.setDescription("This is a mobile category");
-		category.setName("mobile category");
-		Boolean status=categoryDAO.update(category);
-		Assert.assertEquals("update category test case",true,status);
-		}
-	@Test
-	public void getCategoryTestCase()
-	{
-				Assert.assertEquals("get category test case",null,categoryDAO.get("abcd"));
-		}
-
-	public void getallCategoryTestCase()
-	
+		Assert.assertEquals("save category test case",true,status);
+		}*/
+		/*@Test
+		public void deleteCategoryTestCase()
 		{
-			Assert.assertEquals("getall category test case",12,categoryDAO.list().size());
+			category.setId("345");
+			Boolean status=categoryDAO.delete(category);
+			Assert.assertEquals("delete category test case",true,status);
+		}*/
+	@Test
+		public void updateCategoryTestCase()
+		{
+			category.setId("123");
+			category.setName("boos");
+						category.setDescription("mox");
+						Boolean status=categoryDAO.update(category);
+						Assert.assertEquals("update category test case",true,status);
+						
+			
 		}
-}
+		
+	
+		
+	}

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class ExactController {
-
+public class ExactController 
+{ 
 	@RequestMapping("/")
 	public String gohome()
 	{
@@ -16,7 +16,7 @@ public class ExactController {
 	@RequestMapping("/registeration")
 	public String registeration(Model model)
 	{
-		model.addAttribute("registermessage","You Successfully Registered");
+		model.addAttribute("registermessage","You are successfully registered");
 		return "index";
 	}
 	
@@ -25,9 +25,9 @@ public class ExactController {
 	{
 		if(id.equals("niit") && pwd.equals("niit"))
 		{
-			model.addAttribute("SuccessMessage","you have successfully loggedin");
+			model.addAttribute("SuccessMessage","WELCOME");
 			return "index";
-		}
+				}
 		else if(id.equals("123") && pwd.equals("456"))
 		{
 			model.addAttribute("SuccessAdmin","you have successfully loggedin as admin");
@@ -75,8 +75,7 @@ public class ExactController {
 	@RequestMapping("/home")
 	public String home(Model model)
 	{
-		model.addAttribute("osma","true");
-					return "home";
+							return "home";
 	}
 
 		@RequestMapping("/aboutus")
@@ -98,4 +97,28 @@ public class ExactController {
 		model.addAttribute("mycart","true");
 					return "mycart";
 	}
+	@RequestMapping("/canon")
+	public String canon(Model model)
+	{
+		model.addAttribute("userClickedCanon","true");
+					return "canon";
 	}
+	@RequestMapping("/nikon")
+	public String nikon(Model model)
+	{
+		model.addAttribute("userClickedNikon","true");
+					return "nikon";
+	}
+	@RequestMapping("/sony")
+	public String sony(Model model)
+	{
+		model.addAttribute("userClickedSony","true");
+					return "sony";
+	}
+	@RequestMapping("/kodak")
+	public String kodak(Model model)
+	{
+		model.addAttribute("userClickedKodak","true");
+					return "kodak";
+	}
+		}

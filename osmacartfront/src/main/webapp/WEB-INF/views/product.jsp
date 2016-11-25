@@ -8,6 +8,25 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include><br>
-this is product
+<form action=" " method=" ">
+<table style="margin:40px;">
+<tr>
+<td><label for="Product ID">Product ID</label></td>
+<td>:</td>
+<td><input type="text" name="Product ID"></br>
+</tr>
+<tr>
+<td><label for="Product Name">Product Name</label></td>
+<td>:</td>
+<td><input type="text" name="Product Name"></br>
+</tr>
+<td><label for="Product Description">Product Description</label></td>
+<td>:</td>
+<td><input type="text" name="Category Description"></br>
+</tr>
+</table>
+<input type="submit" value="Save Category">
+</form>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

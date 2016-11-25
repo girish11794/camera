@@ -3,13 +3,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+body
+{
+text-align: center;
+font-style: italic ;
+font-size: 300px;
+}
+</style>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-</head>
-<body>
-<title>Login page</title>
-</head>
-<body>
 <jsp:include page="header.jsp"></jsp:include><br>
+<body>
 <form action="validate" method="post">
 <table style="margin:40px;">
 <tr>
